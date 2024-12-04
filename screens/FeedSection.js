@@ -1,42 +1,81 @@
 import React from "react";
-import { FlatList } from "react-native";
-import { Box, VStack, HStack, Image, Text } from "@gluestack-ui/themed";
+import { FlatList, TouchableOpacity } from "react-native";
+import { VStack, HStack, Text, Image } from "@gluestack-ui/themed";
+import Icon from "react-native-vector-icons/Ionicons"; // Import Ionicons
+import profiles from "../data/profiles";
 
-const FeedScreen = () => {
-  const feedData = [
-    { id: "1", username: "user1", imageUrl: "https://picsum.photos/400" },
-    { id: "2", username: "user2", imageUrl: "https://picsum.photos/401" },
-    { id: "3", username: "user3", imageUrl: "https://picsum.photos/402" },
-    { id: "4", username: "user4", imageUrl: "https://picsum.photos/403" },
-    { id: "5", username: "user5", imageUrl: "https://picsum.photos/404" },
-  ];
-
-  const renderItem = ({ item }) => (
-    <Box p="$4" mb="$4">
-      <HStack space="md" alignItems="center" mb="$4">
-        <Box width="$12" height="$12" bg="$gray200" borderRadius="$full" />
-        <Text fontWeight="$bold">{item.username}</Text>
+const FeedScreen = ({ navigation }) => {
+  const renderPostItem = ({ item }) => (
+    <VStack space="md" p="$4">
+      <HStack alignItems="center" justifyContent="space-between">
+        <HStack alignItems="center">
+          <Image
+            source={{ uri: item.profilePicture }}
+            width="$8"
+            height="$8"
+            borderRadius="$full"
+            alt="User Avatar"
+          />
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("ProfileDetails", { username: item.username })
+            }
+          >
+            <Text fontSize="$lg" fontWeight="$bold" ml="$2">
+              {item.username}
+            </Text>
+          </TouchableOpacity>
+        </HStack>
+        <Icon name="ellipsis-horizontal" size={24} color="black" />
       </HStack>
+
       <Image
-        source={{ uri: item.imageUrl }}
-        width="$full"
+        source={{ uri: item.firstPost.imageUrl }}
+        width="100%"
         height="$64"
-        alt={`Post by ${item.username}`}
-        borderRadius="$md"
+        alt={`First post of ${item.username}`}
       />
-      <HStack space="md" mt="$4">
-        <Box width="$6" height="$6" bg="$gray200" borderRadius="$full" />
-        <Box width="$6" height="$6" bg="$gray200" borderRadius="$full" />
-        <Box width="$6" height="$6" bg="$gray200" borderRadius="$full" />
+
+      <HStack justifyContent="space-between" mt="$2">
+        <HStack space="$2" alignItems="center">
+          <TouchableOpacity>
+            <Icon name="heart-outline" size={24} color="black" />
+          </TouchableOpacity>
+          <Text>{item.firstPost.likes}</Text>
+          <TouchableOpacity>
+            <Icon name="chatbubble-outline" size={24} color="black" />
+          </TouchableOpacity>
+          <Text>{item.firstPost.comments}</Text>
+          <TouchableOpacity>
+            <Icon name="paper-plane-outline" size={24} color="black" />
+          </TouchableOpacity>
+        </HStack>
+        <TouchableOpacity>
+          <Icon name="bookmark-outline" size={24} color="black" />
+        </TouchableOpacity>
       </HStack>
-    </Box>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("ProfileDetails", { username: item.username })
+        }
+      >
+        <Text fontSize="$lg" fontWeight="$bold" ml="$2">
+          {item.username}: <Text> {item.firstPost.caption}</Text>
+        </Text>
+      </TouchableOpacity>
+    </VStack>
   );
+
+  const firstPosts = profiles.map((profile) => ({
+    username: profile.username,
+    firstPost: profile.posts[0],
+  }));
 
   return (
     <FlatList
-      data={feedData}
-      renderItem={renderItem}
-      keyExtractor={(item) => item.id}
+      data={firstPosts}
+      renderItem={renderPostItem}
+      keyExtractor={(item) => item.username}
     />
   );
 };
