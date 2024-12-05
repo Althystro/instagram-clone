@@ -5,6 +5,7 @@ import { Icon } from "@gluestack-ui/themed";
 import { Ionicons } from "@expo/vector-icons";
 import FeedNav from "./FeedNav/FeedNav";
 import ProfileNav from "./ProfileNav/ProfileNav";
+
 const Tab = createBottomTabNavigator();
 
 const MainNav = () => {
@@ -26,7 +27,13 @@ const MainNav = () => {
         },
       })}
     >
-      <Tab.Screen name="Feed" component={FeedNav} />
+      <Tab.Screen
+        name="Feed"
+        component={FeedNav}
+        options={{
+          headerShown: false,
+        }}
+      />
       <Tab.Screen name="Profile" component={ProfileNav} />
     </Tab.Navigator>
   );
