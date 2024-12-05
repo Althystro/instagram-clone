@@ -8,6 +8,26 @@ const profiles = [
     postsCount: 42,
     followersCount: 1337,
     followingCount: 420,
+    highlights: [
+      {
+        id: "1",
+        title: "Alabama",
+        image:
+          "https://www.cbs42.com/wp-content/uploads/sites/81/2019/10/Sweet-Home-Alabama.jpg?w=876&h=493&crop=1",
+      },
+      {
+        id: "2",
+        title: "Chicago",
+        image:
+          "https://afar.brightspotcdn.com/dims4/default/53cac3e/2147483647/strip/true/crop/800x424+0+57/resize/1440x764!/format/webp/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Fd8%2F85%2F07db0fa926da4ada94519300f70c%2Foriginal-open-uri20170420-13263-gkh5e",
+      },
+      {
+        id: "3",
+        title: "Seattle",
+        image:
+          "https://i.natgeofe.com/n/0652a07e-42ed-4f3d-b2ea-0538de0c5ba3/seattle-travel_16x9.jpg",
+      },
+    ],
     posts: [
       {
         id: "1",
@@ -83,6 +103,26 @@ const profiles = [
     postsCount: 42,
     followersCount: 1337,
     followingCount: 420,
+    highlights: [
+      {
+        id: "1",
+        title: "Alabama",
+        image:
+          "https://www.cbs42.com/wp-content/uploads/sites/81/2019/10/Sweet-Home-Alabama.jpg?w=876&h=493&crop=1",
+      },
+      {
+        id: "2",
+        title: "Chicago",
+        image:
+          "https://afar.brightspotcdn.com/dims4/default/53cac3e/2147483647/strip/true/crop/800x424+0+57/resize/1440x764!/format/webp/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Fd8%2F85%2F07db0fa926da4ada94519300f70c%2Foriginal-open-uri20170420-13263-gkh5e",
+      },
+      {
+        id: "3",
+        title: "Seattle",
+        image:
+          "https://i.natgeofe.com/n/0652a07e-42ed-4f3d-b2ea-0538de0c5ba3/seattle-travel_16x9.jpg",
+      },
+    ],
     posts: [
       {
         id: "1",
@@ -158,6 +198,26 @@ const profiles = [
     postsCount: 42,
     followersCount: 1337,
     followingCount: 420,
+    highlights: [
+      {
+        id: "1",
+        title: "Alabama",
+        image:
+          "https://www.cbs42.com/wp-content/uploads/sites/81/2019/10/Sweet-Home-Alabama.jpg?w=876&h=493&crop=1",
+      },
+      {
+        id: "2",
+        title: "Chicago",
+        image:
+          "https://afar.brightspotcdn.com/dims4/default/53cac3e/2147483647/strip/true/crop/800x424+0+57/resize/1440x764!/format/webp/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Fd8%2F85%2F07db0fa926da4ada94519300f70c%2Foriginal-open-uri20170420-13263-gkh5e",
+      },
+      {
+        id: "3",
+        title: "Seattle",
+        image:
+          "https://i.natgeofe.com/n/0652a07e-42ed-4f3d-b2ea-0538de0c5ba3/seattle-travel_16x9.jpg",
+      },
+    ],
     posts: [
       {
         id: "1",
@@ -233,6 +293,26 @@ const profiles = [
     postsCount: 42,
     followersCount: 1337,
     followingCount: 420,
+    highlights: [
+      {
+        id: "1",
+        title: "Alabama",
+        image:
+          "https://www.cbs42.com/wp-content/uploads/sites/81/2019/10/Sweet-Home-Alabama.jpg?w=876&h=493&crop=1",
+      },
+      {
+        id: "2",
+        title: "Chicago",
+        image:
+          "https://afar.brightspotcdn.com/dims4/default/53cac3e/2147483647/strip/true/crop/800x424+0+57/resize/1440x764!/format/webp/quality/90/?url=https%3A%2F%2Fk3-prod-afar-media.s3.us-west-2.amazonaws.com%2Fbrightspot%2Fd8%2F85%2F07db0fa926da4ada94519300f70c%2Foriginal-open-uri20170420-13263-gkh5e",
+      },
+      {
+        id: "3",
+        title: "Seattle",
+        image:
+          "https://i.natgeofe.com/n/0652a07e-42ed-4f3d-b2ea-0538de0c5ba3/seattle-travel_16x9.jpg",
+      },
+    ],
     posts: [
       {
         id: "1",

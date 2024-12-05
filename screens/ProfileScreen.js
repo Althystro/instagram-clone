@@ -38,14 +38,16 @@ const ProfileScreen = () => {
   ];
 
   const renderPostItem = ({ item }) => (
-    <Image
-      source={
-        item?.imageUrl
-          ? { uri: item.imageUrl }
-          : require("../assets/placeholder.png")
-      }
-      style={styles.postImage}
-    />
+    <TouchableOpacity style={styles.touchable}>
+      <Image
+        source={
+          item?.imageUrl
+            ? { uri: item.imageUrl }
+            : require("../assets/placeholder.png")
+        }
+        style={styles.postImage}
+      />
+    </TouchableOpacity>
   );
 
   const renderHighlight = ({ item }) => (
@@ -366,6 +368,7 @@ const styles = StyleSheet.create({
   postImage: {
     width: "100%",
     aspectRatio: 1,
+    // margin: 1,
   },
   touchable: {
     flex: 1,
