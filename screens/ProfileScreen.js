@@ -9,6 +9,8 @@ import {
   StyleSheet,
 } from "react-native";
 import profiles from "../data/profiles";
+import { Pressable } from "@gluestack-ui/themed";
+// import Video from "react-native-video";
 
 const ProfileScreen = () => {
   const [activeTab, setActiveTab] = useState("grid");
@@ -50,9 +52,11 @@ const ProfileScreen = () => {
 
   const renderHighlight = ({ item }) => (
     <View style={styles.highlightContainer}>
-      <View style={styles.highlightImageContainer}>
-        <Image source={{ uri: item.image }} style={styles.highlightImage} />
-      </View>
+      <TouchableOpacity>
+        <View style={styles.highlightImageContainer}>
+          <Image source={{ uri: item.image }} style={styles.highlightImage} />
+        </View>
+      </TouchableOpacity>
       <Text style={styles.highlightTitle}>{item.title}</Text>
     </View>
   );
@@ -159,6 +163,7 @@ const ProfileScreen = () => {
             >
               ▶
             </TabButton>
+
             <TabButton
               isActive={activeTab === "tagged"}
               onPress={() => setActiveTab("tagged")}
@@ -171,12 +176,39 @@ const ProfileScreen = () => {
           {activeTab === "grid" && (
             <FlatList
               data={myProfile.posts}
-              renderItem={renderPostItem}
               keyExtractor={(item) => item.id}
               numColumns={3}
               scrollEnabled={false}
               contentContainerStyle={styles.postsGrid}
+              renderItem={({ item }) => {
+                return (
+                  <TouchableOpacity style={styles.touchable}>
+                    <Image
+                      source={
+                        item?.imageUrl
+                          ? { uri: item.imageUrl }
+                          : require("../assets/placeholder.png")
+                      }
+                      style={styles.postImage}
+                    />
+                  </TouchableOpacity>
+                );
+              }}
             />
+          )}
+          {activeTab === "reels" && (
+            <Text>
+              Reels section
+              {/* <Video
+                resizeMode="cover"
+                source={require("../data/videos/video1.mp4")}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  position: "absolute",
+                }}
+              /> */}
+            </Text>
           )}
         </View>
       </ScrollView>
