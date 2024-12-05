@@ -10,10 +10,12 @@ const FeedScreen = ({ navigation }) => {
       <HStack alignItems="center" justifyContent="space-between">
         <HStack alignItems="center">
           <Image
-            source={{ uri: item.profilePicture }}
-            width="$8"
-            height="$8"
-            borderRadius="$full"
+            source={
+              item?.profilePicture
+                ? { uri: item.profilePicture }
+                : require("../assets/placeholder.png")
+            }
+            style={{ width: 40, height: 40, borderRadius: 20 }}
             alt="User Avatar"
           />
           <TouchableOpacity
@@ -30,10 +32,13 @@ const FeedScreen = ({ navigation }) => {
       </HStack>
 
       <Image
-        source={{ uri: item.firstPost.imageUrl }}
-        width="100%"
-        height="$64"
-        alt={`First post of ${item.username}`}
+        source={
+          item?.firstPost?.imageUrl
+            ? { uri: item.firstPost.imageUrl }
+            : require("../assets/placeholder.png")
+        }
+        style={{ width: "100%", height: 200 }}
+        alt={`Post by ${item.username}`}
       />
 
       <HStack justifyContent="space-between" mt="$2">

@@ -10,8 +10,17 @@ const Stack = createNativeStackNavigator();
 const FeedNav = () => {
   return (
     <Stack.Navigator initialRouteName="Feed">
-      <Stack.Screen name="Feed" component={FeedSection} title="" />
-      <Stack.Screen name="ProfileDetails" component={ProfileDetailScreen} />
+      <Stack.Screen
+        name="Feed"
+        component={FeedSection}
+        title=""
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="ProfileDetails"
+        component={ProfileDetailScreen}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 };
